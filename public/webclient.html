@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- CASE 1: incase you want to send file to server directly using Html form -->
+    <!-- from multer repo example - working good -->
+    <!-- <form action="http://localhost:3000/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="avatar" />
+        <button>Submit</button>
+    </form> -->
+
+    <!--CASE 2:  incase you want make request using javacript, its my favourite because it gives me not just just html5 validation on form but I can also apply some javascript conditions before submiting form-->
+    <form onsubmit="return Upload()">
+        <!-- dont get confused with return keyword inside onsubmit, it is there to prevent html page to reload/default behaviour, and this have nothing to do with actual file upload process but if you remove it page will reload on submit -->
+        <input required type="file" id="fileInput" onchange="return previewFile()">
+        <button type="submit"> Upload </button>
+        <br><br>
+        <img src="" id="showPic" style="border-radius: 50%; width: 100px;">
+    </form>
+    <script src="index.js"></script>
+</body>
+</html>
